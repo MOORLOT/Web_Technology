@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      padding: 40px;
+      font-family: sans-serif;
+    }
+
+    .status_bar {
+      height: 5px;
+      background-color: #bbb7b7;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+    .status_bar div {
+      background-color: #6b2737;
+      height: 100%;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+    }
+
+    .top img {
+      width: 100px;
+      border-radius: 10px;
+    }
+
+    .top .info {
+      margin-left: 20px;
+    }
+
+    .name {
+      font-size: 50px;
+      font-weight: bold;
+    }
+
+    .position {
+      font-size: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #6b2737;
+    }
+
+    .contact {
+      display: flex;
+      align-items: center;
+    }
+
+    .contact a {
+      margin-left: 10px;
+    }
+
+    h3 {
+      margin: 0;
+    }
+
+    h4 {
+      color: #c2c2c2;
+      margin-top: 0;
+      font-weight: 400;
+    }
+
+    .block {
+      margin-bottom: 10px;
+    }
+
+  </style>
+</head>
+<body>
+<div class="top">
+  <img src="img/1.jpg">
+  <div class="info">
+    <div class="name"> Bakalov Artem Igorovich</div>
+    <div class="position">student</div>
+    <div class="position">studying in Cherkasy State Technological University</div>
+  </div>
+</div>
+
+<div style="display: flex;justify-content: space-between;">
+  <div>
+    <div>
+      <h1>Education</h1>
+      <div class="block">
+        <h3>Engineer of software development. rank: Junior.</h3>
+        <h3>Cherkasy polytechnical college</h3>
+      </div>
+
+      <h1>Experience</h1>
+      <div class="block">
+        <h3>Java, C++, C#, Kotlin, HTML + CSS, SQL, JavaScript, TypeScript</h3>
+      </div>
+
+      <div class="block">
+        <h1>Work with</h1>
+        <h3>Unity, UN4, UN5, Blender, Android Studio, IDEA</h3>
+      </div>
+
+      <h1>This day</h1>
+      <div class="block">
+        <h3>Engineer of software development. rank: Bachelor.</h3>
+        <h3>
+          Cherkasy State Technological University
+        </h3>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <h1>Contacts</h1>
+      <div class="contact">
+        <span class="material-symbols-outlined">Telephone:</span>
+        <a href="tel:+380733207365">+380733207365</a>
+      </div>
+      <div class="contact">
+        <span class="material-symbols-outlined">Email:</span>
+        <a href="mailto:moorlotalhazred@gmail.com">moorlotalhazred@gmail.com</a>
+      </div>
+    </div>
+    <div>
+      <h1>Skills</h1>
+      <div id="skills"></div>
+    </div>
+
+    <div>
+      <h1>Soft-Skills</h1>
+      <div id="block">
+        <h3>
+          Adaptability,
+          Communication,
+          Compromise,
+        </h3>
+
+        <h3>
+          Creative thinking,
+          Dependability,
+          Leadership,
+        </h3>
+
+        <h3>
+          Listening,
+          Work ethic,
+          Teamwork,
+        </h3>
+
+        <h3>
+          Positivity,
+          Time management,
+          Motivation,
+        </h3>
+
+        <h3>
+          Problem-solving,
+          Critical thinking,
+          Conflict resolution,
+        </h3>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script>
+  var skills = [
+    {"name": "English", "width": 75},
+    {"name": "SQL", "width": 80},
+    {"name": "Java", "width": 55},
+    {"name": "Kotlin", "width": 50},
+    {"name": "HTML + CSS", "width": 50},
+    {"name": "C++", "width": 30}
+  ];
+  var skills_html = "";
+
+  skills.forEach(function (item, index) {
+
+    skills_html += `
+            <div>
+                <div>${item.name}</div>
+                <div class="status_bar">
+                    <div style="width: ${item.width}%"></div>
+                </div>
+            </div>
+            `;
+
+
+  });
+
+  var skillsDiv = document.getElementById('skills');
+  skillsDiv.innerHTML = skills_html;
+</script>
+</body>
+</html>
